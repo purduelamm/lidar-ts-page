@@ -1,0 +1,15 @@
+import {chromium} from '@playwright/test';
+import fs from 'node:fs/promises';
+const output=process.argv[2]||'.cache/final-preview';
+await fs.mkdir(output,{recursive:true});
+const browser=await chromium.launch({channel:'chrome',headless:true});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`)});
+await page.goto('http://127.0.0.1:4173/lidar-ts-page/');
+for(const id of ['overview','pipeline','optimization','meshes','simulation','citation'])await page.locator(`#${id}`).scrollIntoViewIfNeeded();
+await page.evaluate(()=>Promise.all([...document.images].map(i=>i.decode().catch(()=>{}))));
+await page.evaluate(()=>scrollTo(0,0));
+await page.screenshot({path:`${output}/IROS_2026_project_website_preview.png`,fullPage:true});
+await page.locator('#mesh-comparison').screenshot({path:`${output}/IROS_2026_mesh_comparison_preview.png`});
+await fs.copyFile('.cache/mobile-final.png',`${output}/IROS_2026_project_website_mobile.png`);
+console.log(JSON.stringify({errors,output}));await browser.close();

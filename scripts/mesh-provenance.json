@@ -1,0 +1,828 @@
+[
+  {
+    "scene": "utmm-fast",
+    "method": "ours",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\UTMM\\fast-straight\\mesh_output\\ours_var.ply",
+    "sourceSha256": "ab521e167ec035c6e1001e9d875f553ba08c0600fa3bca25f38096eab1c8da29",
+    "originalVertices": 5036822,
+    "originalFaces": 2613295,
+    "displayVertices": 5030433,
+    "displayFaces": 2600517,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        1.708128010034561,
+        -7.862613387107849,
+        -0.5107651829719544
+      ],
+      [
+        9.437664937973022,
+        6.632648143768311,
+        4.620072393417359
+      ]
+    ],
+    "rawBounds": [
+      [
+        0.5751230120658875,
+        -9.93793773651123,
+        -1.7610129117965698
+      ],
+      [
+        11.358298301696777,
+        7.665477752685547,
+        6.313183307647705
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB"
+    ],
+    "seconds": 11.81,
+    "rawGlbBytes": 111694116,
+    "webAsset": "static/models/utmm-fast/ours.glb",
+    "webBytes": 41637660,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "utmm-fast",
+    "method": "ts",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\UTMM\\fast-straight\\mesh_output\\triangle.ply",
+    "sourceSha256": "2917ad4f86fcc296eb47807f9b6f237d02e830dc68e8fadb0d48020ebedfa300",
+    "originalVertices": 548895,
+    "originalFaces": 247027,
+    "displayVertices": 548511,
+    "displayFaces": 247027,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        1.7405565714836122,
+        -8.540097160339355,
+        -1.592565314769745
+      ],
+      [
+        13.119058094024656,
+        6.22780994415283,
+        4.831890945434565
+      ]
+    ],
+    "rawBounds": [
+      [
+        0.6582185626029968,
+        -16.651206970214844,
+        -8.508996963500977
+      ],
+      [
+        39.46678924560547,
+        16.55354118347168,
+        10.584114074707031
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB"
+    ],
+    "seconds": 0.82,
+    "rawGlbBytes": 11741476,
+    "webAsset": "static/models/utmm-fast/ts.glb",
+    "webBytes": 4430512,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "utmm-fast",
+    "method": "milo",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\UTMM\\fast-straight\\mesh_output\\milo.ply",
+    "sourceSha256": "6507eaccffddff5aff25af20889275c1df1a337f50b691e42c43c265b3e1db6c",
+    "originalVertices": 1215418,
+    "originalFaces": 2450208,
+    "displayVertices": 240302,
+    "displayFaces": 500000,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        1.2620362293720246,
+        -8.301240558624267,
+        -1.8693082964420318
+      ],
+      [
+        11.717351846694951,
+        6.642376489639288,
+        4.8675214385986365
+      ]
+    ],
+    "rawBounds": [
+      [
+        -2.045156955718994,
+        -25.55858039855957,
+        -13.53938102722168
+      ],
+      [
+        50.16233444213867,
+        11.676521301269531,
+        7.829815864562988
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB"
+    ],
+    "seconds": 40.8,
+    "rawGlbBytes": 9845808,
+    "webAsset": "static/models/utmm-fast/milo.glb",
+    "webBytes": 2255136,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "utmm-fast",
+    "method": "2dgs",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\UTMM\\fast-straight\\mesh_output\\2dgs.ply",
+    "sourceSha256": "a3e47bbe6142d2e5d2ea81b3bea8acfc408f5af8afec536b09cdc7c7cf0427ba",
+    "originalVertices": 314728,
+    "originalFaces": 608532,
+    "displayVertices": 260462,
+    "displayFaces": 500000,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        2.525,
+        -8.225,
+        -0.38296309710495796
+      ],
+      [
+        21.175,
+        6.325000000000001,
+        4.759659084068653
+      ]
+    ],
+    "rawBounds": [
+      [
+        1.2129705321618218,
+        -9.03565721579247,
+        -3.5250000000000004
+      ],
+      [
+        23.41001080731923,
+        7.616473588977897,
+        5.175000000000001
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB"
+    ],
+    "seconds": 2.54,
+    "rawGlbBytes": 10168368,
+    "webAsset": "static/models/utmm-fast/2dgs.glb",
+    "webBytes": 2230600,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "utmm-fast",
+    "method": "mesh-splat",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\UTMM\\fast-straight\\mesh_output\\mesh_splatting.ply",
+    "sourceSha256": "43b68411c3f12111e12ad28788d4c57d345e4431c1704000249e56cf9bb07cec",
+    "originalVertices": 591912,
+    "originalFaces": 639833,
+    "displayVertices": 591574,
+    "displayFaces": 639157,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        1.5947373604774475,
+        -9.588215217590331,
+        -0.6205074894428253
+      ],
+      [
+        14.69580273628236,
+        6.717270507812503,
+        5.02958646774292
+      ]
+    ],
+    "rawBounds": [
+      [
+        0.6494824290275574,
+        -21.53410530090332,
+        -3.395071268081665
+      ],
+      [
+        41.31781005859375,
+        17.49411392211914,
+        16.920778274536133
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB"
+    ],
+    "seconds": 1.97,
+    "rawGlbBytes": 17136044,
+    "webAsset": "static/models/utmm-fast/mesh-splat.glb",
+    "webBytes": 5452296,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "utmm-fast",
+    "method": "sugar",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\UTMM\\fast-straight\\mesh_output\\sugar.ply",
+    "sourceSha256": "5989a06d8c1f24d98e9c8ec51b3757abb7ad1f3b52670297694e7bd530a5218a",
+    "originalVertices": 1292589,
+    "originalFaces": 0,
+    "displayVertices": 1292589,
+    "displayFaces": 0,
+    "pointCloud": true,
+    "vertexColors": true,
+    "bounds": [
+      [
+        0.9925370359420777,
+        -7.9154556846618656,
+        -0.8007796478271484
+      ],
+      [
+        10.231017494201655,
+        5.975599822998046,
+        4.679281330108639
+      ]
+    ],
+    "operations": [
+      "retain all Gaussian centers",
+      "convert SH DC coefficients to RGB",
+      "export points without surface reconstruction"
+    ],
+    "rawGlbBytes": 20682352,
+    "webAsset": "static/models/utmm-fast/sugar.glb",
+    "webBytes": 8873672,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "replica-room0",
+    "method": "ours",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\replica\\room0\\mesh_output\\ours_var.ply",
+    "sourceSha256": "d05d15de055b3d9235a37cad4e4ed5d697a72f6c6aac40becae67f75e7167ba9",
+    "originalVertices": 6571989,
+    "originalFaces": 3696013,
+    "displayVertices": 6570952,
+    "displayFaces": 3693939,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        -21.869597778320312,
+        -25.17408218383789,
+        -20.669044647216797
+      ],
+      [
+        28.32416816711426,
+        15.375160598754885,
+        15.056953201293947
+      ]
+    ],
+    "rawBounds": [
+      [
+        -28.898941040039062,
+        -32.92992401123047,
+        -31.73013687133789
+      ],
+      [
+        36.329524993896484,
+        21.373506546020508,
+        21.594650268554688
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB"
+    ],
+    "seconds": 17.09,
+    "rawGlbBytes": 149463492,
+    "webAsset": "static/models/replica-room0/ours.glb",
+    "webBytes": 57251868,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "replica-room0",
+    "method": "ts",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\replica\\room0\\mesh_output\\triangle.ply",
+    "sourceSha256": "f8e126bfae25159dc922093151a610830cce1acced2165604dc5e9a0f9a11e45",
+    "originalVertices": 2844406,
+    "originalFaces": 1918145,
+    "displayVertices": 2834971,
+    "displayFaces": 1901245,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        -22.18198356628418,
+        -25.039051818847657,
+        -18.860103034973143
+      ],
+      [
+        26.514710521698007,
+        14.211998033523571,
+        12.330663633346557
+      ]
+    ],
+    "rawBounds": [
+      [
+        -27.476839065551758,
+        -27.586442947387695,
+        -24.174314498901367
+      ],
+      [
+        33.48344421386719,
+        19.42592430114746,
+        15.791667938232422
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB"
+    ],
+    "seconds": 10.64,
+    "rawGlbBytes": 68175464,
+    "webAsset": "static/models/replica-room0/ts.glb",
+    "webBytes": 22561676,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "replica-room0",
+    "method": "milo",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\replica\\room0\\mesh_output\\milo.ply",
+    "sourceSha256": "f360efd10d608bca88f0cfe6df020f70b87b71d3d11c66efa04e3e084cb1893d",
+    "originalVertices": 1707618,
+    "originalFaces": 3414666,
+    "displayVertices": 250282,
+    "displayFaces": 500000,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        -21.380813846588136,
+        -24.650162563323974,
+        -19.75745365142822
+      ],
+      [
+        26.809270381927494,
+        14.533951759338386,
+        11.85346921920777
+      ]
+    ],
+    "rawBounds": [
+      [
+        -24.372989654541016,
+        -26.11784553527832,
+        -23.953397750854492
+      ],
+      [
+        32.771507263183594,
+        17.01482391357422,
+        15.614648818969727
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB"
+    ],
+    "seconds": 52.45,
+    "rawGlbBytes": 10005492,
+    "webAsset": "static/models/replica-room0/milo.glb",
+    "webBytes": 2185156,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "replica-room0",
+    "method": "2dgs",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\replica\\room0\\mesh_output\\2dgs.ply",
+    "sourceSha256": "8f971638a632ef828931f91d0c73b7ec775f874621edd4cd995b37801e7e8d32",
+    "originalVertices": 3620059,
+    "originalFaces": 7198476,
+    "displayVertices": 270821,
+    "displayFaces": 500000,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        -21.85128965361047,
+        -24.575000000000003,
+        -21.46878031786419
+      ],
+      [
+        29.375,
+        15.875000000000002,
+        13.575000000000001
+      ]
+    ],
+    "rawBounds": [
+      [
+        -23.90762895664528,
+        -26.003479236115655,
+        -23.725384592561163
+      ],
+      [
+        32.69802469529476,
+        17.02888804297628,
+        14.584055021789837
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB"
+    ],
+    "seconds": 98.56,
+    "rawGlbBytes": 10334116,
+    "webAsset": "static/models/replica-room0/2dgs.glb",
+    "webBytes": 2148048,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "replica-room0",
+    "method": "mesh-splat",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\replica\\room0\\mesh_output\\mesh_splatting.ply",
+    "sourceSha256": "deba950ccee3a74f0fc063222e639367cc3bc7a28354fdc63d9b5aed150058ff",
+    "originalVertices": 2631959,
+    "originalFaces": 4190406,
+    "displayVertices": 2627031,
+    "displayFaces": 4180548,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        -21.44680694580078,
+        -24.37831615447998,
+        -18.8866024017334
+      ],
+      [
+        26.95823852539062,
+        13.939599971771239,
+        12.339090995788574
+      ]
+    ],
+    "rawBounds": [
+      [
+        -24.456295013427734,
+        -30.601232528686523,
+        -27.434892654418945
+      ],
+      [
+        34.63804244995117,
+        19.203536987304688,
+        21.503854751586914
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB"
+    ],
+    "seconds": 13.92,
+    "rawGlbBytes": 92200060,
+    "webAsset": "static/models/replica-room0/mesh-splat.glb",
+    "webBytes": 27982936,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "replica-room0",
+    "method": "sugar",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\replica\\room0\\mesh_output\\sugar.ply",
+    "sourceSha256": "439a234c2d1b2dc82aa2585f36697c1c377c38f5d29328dcaf1c9163df726cb6",
+    "originalVertices": 1699994,
+    "originalFaces": 0,
+    "displayVertices": 1699994,
+    "displayFaces": 0,
+    "pointCloud": true,
+    "vertexColors": true,
+    "bounds": [
+      [
+        -21.992283840179443,
+        -24.545945911407472,
+        -20.352427825927734
+      ],
+      [
+        28.019070434570317,
+        15.444644174575807,
+        13.574322414398194
+      ]
+    ],
+    "operations": [
+      "retain all Gaussian centers",
+      "convert SH DC coefficients to RGB",
+      "export points without surface reconstruction"
+    ],
+    "rawGlbBytes": 27200836,
+    "webAsset": "static/models/replica-room0/sugar.glb",
+    "webBytes": 11695180,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "ncd-quad",
+    "method": "ours",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\NCD\\mesh_output\\0_ours.ply",
+    "sourceSha256": "ce60d8f5a641913af00d5e3c8ba54e748822ed37e00e77f788a368ca069ab57d",
+    "originalVertices": 6374023,
+    "originalFaces": 3300694,
+    "displayVertices": 6372860,
+    "displayFaces": 3298368,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        -2.081233220100403,
+        -23.991739921569824,
+        -1.7732473492622376
+      ],
+      [
+        55.517278900146486,
+        18.693430824279787,
+        16.009520339965835
+      ]
+    ],
+    "rawBounds": [
+      [
+        -10.014114379882812,
+        -30.61861228942871,
+        -4.11970853805542
+      ],
+      [
+        80.33715057373047,
+        21.01279640197754,
+        26.474037170410156
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB"
+    ],
+    "seconds": 15.5,
+    "rawGlbBytes": 141547164,
+    "webAsset": "static/models/ncd-quad/ours.glb",
+    "webBytes": 52808440,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "ncd-quad",
+    "method": "ts",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\NCD\\mesh_output\\TS.ply",
+    "sourceSha256": "cac98a226970d49f95717862db1cea74485b4092ac2fef85236e305e78591382",
+    "originalVertices": 2190431,
+    "originalFaces": 1035566,
+    "displayVertices": 2188836,
+    "displayFaces": 1035458,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        -2.511445999145508,
+        -24.688809394836426,
+        -5.6510871887207035
+      ],
+      [
+        55.99901962280277,
+        18.224683380126955,
+        14.846132755279548
+      ]
+    ],
+    "rawBounds": [
+      [
+        -37.68921661376953,
+        -52.7307243347168,
+        -12.063237190246582
+      ],
+      [
+        113.30567169189453,
+        30.334657669067383,
+        29.659698486328125
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB"
+    ],
+    "seconds": 5.56,
+    "rawGlbBytes": 47447856,
+    "webAsset": "static/models/ncd-quad/ts.glb",
+    "webBytes": 17407868,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "ncd-quad",
+    "method": "milo",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\NCD\\mesh_output\\milo.ply",
+    "sourceSha256": "53908fd352baf157b827890ef1cb8221132c58bd39999488357549ce626d7f76",
+    "originalVertices": 1327081,
+    "originalFaces": 2657684,
+    "displayVertices": 248202,
+    "displayFaces": 500000,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        -3.9978187084198,
+        -24.653134536743163,
+        -1.5323781490325927
+      ],
+      [
+        56.906272125244136,
+        19.16592559814453,
+        20.450262832641595
+      ]
+    ],
+    "rawBounds": [
+      [
+        -16.180166244506836,
+        -118.32241821289062,
+        -104.784912109375
+      ],
+      [
+        175.05384826660156,
+        113.77870178222656,
+        32.292030334472656
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB"
+    ],
+    "seconds": 43.97,
+    "rawGlbBytes": 9972208,
+    "webAsset": "static/models/ncd-quad/milo.glb",
+    "webBytes": 2208464,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "ncd-quad",
+    "method": "2dgs",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\NCD\\mesh_output\\2dgs.ply",
+    "sourceSha256": "dcf3194d8d2c3ddf6d8f94005c61fa0785ca45b51b5f86b149ff2cade02478c0",
+    "originalVertices": 23336822,
+    "originalFaces": 45100551,
+    "displayVertices": 2401210,
+    "displayFaces": 3229366,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        -5.022248703821068,
+        -24.405722486154136,
+        -3.2533504510070985
+      ],
+      [
+        55.702527849082465,
+        18.54058033555392,
+        25.294615165821174
+      ]
+    ],
+    "rawBounds": [
+      [
+        -9.667085673894507,
+        -26.637984949634863,
+        -6.988061869391782
+      ],
+      [
+        59.3379357580146,
+        20.805632602575994,
+        29.796880379506767
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB",
+      "constrain optimized vertex positions to nearest original source vertices"
+    ],
+    "seconds": 913.67,
+    "rawGlbBytes": 77172732,
+    "preConstraintDisplacementQuantiles": [
+      8.176434485241569e-7,
+      0.005703701603902188,
+      0.01740615908870915,
+      5741.115620916595
+    ],
+    "webAsset": "static/models/ncd-quad/2dgs.glb",
+    "webBytes": 14861552,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "ncd-quad",
+    "method": "mesh-splat",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\NCD\\mesh_output\\mesh_splat.ply",
+    "sourceSha256": "660e73edc0750d60cae82321749ad85bad0a7cb48c3a22fb8cd476a1a583e6c2",
+    "originalVertices": 2614052,
+    "originalFaces": 3145921,
+    "displayVertices": 2606982,
+    "displayFaces": 3131781,
+    "targetFaces": 500000,
+    "bounds": [
+      [
+        -1.7059312450885773,
+        -24.045699806213378,
+        -1.5546503043174744
+      ],
+      [
+        55.49223518371578,
+        18.006044406890847,
+        17.617395362854005
+      ]
+    ],
+    "rawBounds": [
+      [
+        -158.3408203125,
+        -213.98019409179688,
+        -47.80903625488281
+      ],
+      [
+        150.85336303710938,
+        48.74553680419922,
+        84.59735870361328
+      ]
+    ],
+    "vertexColors": true,
+    "transform": "identity; shared scene camera; Z up",
+    "operations": [
+      "merge exact duplicate vertices",
+      "quadric edge collapse preserving boundary, normals, topology",
+      "remove unreferenced vertices",
+      "transfer nearest original vertex RGB"
+    ],
+    "seconds": 11.29,
+    "rawGlbBytes": 79294068,
+    "webAsset": "static/models/ncd-quad/mesh-splat.glb",
+    "webBytes": 22645720,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  },
+  {
+    "scene": "ncd-quad",
+    "method": "sugar",
+    "source": "D:\\archived\\radi_field\\Datasets\\For_paper\\NCD\\mesh_output\\sugar.ply",
+    "sourceSha256": "206a6186bbee99dd89c646a84c8300892a43b8be1ae7bccbc45788b74c04611e",
+    "originalVertices": 1012928,
+    "originalFaces": 0,
+    "displayVertices": 1012928,
+    "displayFaces": 0,
+    "pointCloud": true,
+    "vertexColors": true,
+    "bounds": [
+      [
+        -7.184096450805664,
+        -24.440097560882567,
+        -1.9979161202907563
+      ],
+      [
+        59.26539997100827,
+        19.0086439704895,
+        24.519244842529297
+      ]
+    ],
+    "operations": [
+      "retain all Gaussian centers",
+      "convert SH DC coefficients to RGB",
+      "export points without surface reconstruction"
+    ],
+    "rawGlbBytes": 16207776,
+    "webAsset": "static/models/ncd-quad/sugar.glb",
+    "webBytes": 7128664,
+    "compression": "Meshopt medium, position quantization 16 bits, color 8 bits"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "three": "0.186.0"
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "4.5.0",
+    "@playwright/test": "1.63.0",
+    "esbuild": "0.28.2"
+  },
+  "name": "lidar-ts-project-page",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "IROS 2026 project website for LiDAR-integrated Triangle Splatting",
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs",
+    "test": "playwright test",
+    "check": "node scripts/check_assets.mjs",
+    "previews": "node scripts/capture_previews.mjs"
+  }
+}

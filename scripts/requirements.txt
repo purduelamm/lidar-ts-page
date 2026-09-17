@@ -1,0 +1,8 @@
+trimesh==5.1.0
+numpy==2.5.3
+pymeshlab==2025.7.post1
+scipy==1.18.1
+plyfile==1.1.5
+imageio-ffmpeg==0.6.0
+Pillow==12.3.0
+vtk==9.7.0

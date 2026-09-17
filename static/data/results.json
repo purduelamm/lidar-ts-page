@@ -1,0 +1,232 @@
+{
+  "version": 1,
+  "defaultScene": "utmm-fast",
+  "defaultBaseline": "ts",
+  "scenes": {
+    "utmm-fast": {
+      "id": "utmm-fast",
+      "label": "UTMM · fast-straight",
+      "camera": {
+        "position": [
+          -7.472838903784753,
+          -16.922151843905446,
+          16.54991513609886
+        ],
+        "target": [
+          5.572896474003791,
+          -0.6149826216697694,
+          2.0546536052227022
+        ],
+        "up": [
+          0,
+          0,
+          1
+        ],
+        "near": 0.00724763076543808,
+        "far": 217.4289229631424,
+        "minDistance": 0.1449526153087616,
+        "maxDistance": 72.4763076543808
+      },
+      "methods": {
+        "ours": {
+          "label": "Ours",
+          "model": "static/models/utmm-fast/ours.glb",
+          "preview": "static/images/meshes/utmm-fast/ours.jpg",
+          "bytes": 41637660,
+          "triangles": 2600517,
+          "kind": "mesh"
+        },
+        "ts": {
+          "label": "Triangle Splatting",
+          "model": "static/models/utmm-fast/ts.glb",
+          "preview": "static/images/meshes/utmm-fast/ts.jpg",
+          "bytes": 4430512,
+          "triangles": 247027,
+          "kind": "mesh"
+        },
+        "milo": {
+          "label": "MILo",
+          "model": "static/models/utmm-fast/milo.glb",
+          "preview": "static/images/meshes/utmm-fast/milo.jpg",
+          "bytes": 2255136,
+          "triangles": 500000,
+          "kind": "mesh"
+        },
+        "2dgs": {
+          "label": "2DGS",
+          "model": "static/models/utmm-fast/2dgs.glb",
+          "preview": "static/images/meshes/utmm-fast/2dgs.jpg",
+          "bytes": 2230600,
+          "triangles": 500000,
+          "kind": "mesh"
+        },
+        "mesh-splat": {
+          "label": "Mesh-splat",
+          "model": "static/models/utmm-fast/mesh-splat.glb",
+          "preview": "static/images/meshes/utmm-fast/mesh-splat.jpg",
+          "bytes": 5452296,
+          "triangles": 639157,
+          "kind": "mesh"
+        },
+        "sugar": {
+          "label": "SuGaR",
+          "model": "static/models/utmm-fast/sugar.glb",
+          "preview": "static/images/meshes/utmm-fast/sugar.jpg",
+          "bytes": 8873672,
+          "triangles": 0,
+          "kind": "points"
+        }
+      }
+    },
+    "replica-room0": {
+      "id": "replica-room0",
+      "label": "Replica · room0",
+      "camera": {
+        "position": [
+          48.40167454528809,
+          51.56852589607239,
+          47.38772022247315
+        ],
+        "target": [
+          3.2272851943969734,
+          -4.899460792541502,
+          -2.806045722961425
+        ],
+        "up": [
+          0,
+          0,
+          1
+        ],
+        "near": 0.025096882972717286,
+        "far": 752.9064891815185,
+        "minDistance": 0.5019376594543458,
+        "maxDistance": 250.96882972717285
+      },
+      "methods": {
+        "ours": {
+          "label": "Ours",
+          "model": "static/models/replica-room0/ours.glb",
+          "preview": "static/images/meshes/replica-room0/ours.jpg",
+          "bytes": 57251868,
+          "triangles": 3693939,
+          "kind": "mesh"
+        },
+        "ts": {
+          "label": "Triangle Splatting",
+          "model": "static/models/replica-room0/ts.glb",
+          "preview": "static/images/meshes/replica-room0/ts.jpg",
+          "bytes": 22561676,
+          "triangles": 1901245,
+          "kind": "mesh"
+        },
+        "milo": {
+          "label": "MILo",
+          "model": "static/models/replica-room0/milo.glb",
+          "preview": "static/images/meshes/replica-room0/milo.jpg",
+          "bytes": 2185156,
+          "triangles": 500000,
+          "kind": "mesh"
+        },
+        "2dgs": {
+          "label": "2DGS",
+          "model": "static/models/replica-room0/2dgs.glb",
+          "preview": "static/images/meshes/replica-room0/2dgs.jpg",
+          "bytes": 2148048,
+          "triangles": 500000,
+          "kind": "mesh"
+        },
+        "mesh-splat": {
+          "label": "Mesh-splat",
+          "model": "static/models/replica-room0/mesh-splat.glb",
+          "preview": "static/images/meshes/replica-room0/mesh-splat.jpg",
+          "bytes": 27982936,
+          "triangles": 4180548,
+          "kind": "mesh"
+        },
+        "sugar": {
+          "label": "SuGaR",
+          "model": "static/models/replica-room0/sugar.glb",
+          "preview": "static/images/meshes/replica-room0/sugar.jpg",
+          "bytes": 11695180,
+          "triangles": 0,
+          "kind": "points"
+        }
+      }
+    },
+    "ncd-quad": {
+      "id": "ncd-quad",
+      "label": "NCD · quad-easy",
+      "camera": {
+        "position": [
+          78.55668374824525,
+          -67.44748068392276,
+          64.71664861559869
+        ],
+        "target": [
+          26.718022840023043,
+          -2.6491545486450185,
+          7.1181364953517985
+        ],
+        "up": [
+          0,
+          0,
+          1
+        ],
+        "near": 0.028799256060123443,
+        "far": 863.9776818037033,
+        "minDistance": 0.5759851212024689,
+        "maxDistance": 287.99256060123446
+      },
+      "methods": {
+        "ours": {
+          "label": "Ours",
+          "model": "static/models/ncd-quad/ours.glb",
+          "preview": "static/images/meshes/ncd-quad/ours.jpg",
+          "bytes": 52808440,
+          "triangles": 3298368,
+          "kind": "mesh"
+        },
+        "ts": {
+          "label": "Triangle Splatting",
+          "model": "static/models/ncd-quad/ts.glb",
+          "preview": "static/images/meshes/ncd-quad/ts.jpg",
+          "bytes": 17407868,
+          "triangles": 1035458,
+          "kind": "mesh"
+        },
+        "milo": {
+          "label": "MILo",
+          "model": "static/models/ncd-quad/milo.glb",
+          "preview": "static/images/meshes/ncd-quad/milo.jpg",
+          "bytes": 2208464,
+          "triangles": 500000,
+          "kind": "mesh"
+        },
+        "2dgs": {
+          "label": "2DGS",
+          "model": "static/models/ncd-quad/2dgs.glb",
+          "preview": "static/images/meshes/ncd-quad/2dgs.jpg",
+          "bytes": 14861552,
+          "triangles": 3229366,
+          "kind": "mesh"
+        },
+        "mesh-splat": {
+          "label": "Mesh-splat",
+          "model": "static/models/ncd-quad/mesh-splat.glb",
+          "preview": "static/images/meshes/ncd-quad/mesh-splat.jpg",
+          "bytes": 22645720,
+          "triangles": 3131781,
+          "kind": "mesh"
+        },
+        "sugar": {
+          "label": "SuGaR",
+          "model": "static/models/ncd-quad/sugar.glb",
+          "preview": "static/images/meshes/ncd-quad/sugar.jpg",
+          "bytes": 7128664,
+          "triangles": 0,
+          "kind": "points"
+        }
+      }
+    }
+  }
+}

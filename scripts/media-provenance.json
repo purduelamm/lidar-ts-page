@@ -1,0 +1,51 @@
+[
+  {
+    "asset": "static/videos/optimization-ours-mesh.mp4",
+    "source": "C:\\Users\\robot-lamm\\OneDrive - purdue.edu\\LAB\\project\\RadiField\\video\\ours.mp4",
+    "bytes": 28065218,
+    "sourceSha256": "71b3c93767d517c6b04a8484b0fba8adfb2e2d44ce0af66f9bbf491f43cc9000",
+    "processing": "H.264, CRF 25, 1280px wide, original timing, no audio, faststart"
+  },
+  {
+    "asset": "static/videos/optimization-ours-rgb.mp4",
+    "source": "C:\\Users\\robot-lamm\\OneDrive - purdue.edu\\LAB\\project\\RadiField\\video\\ours_img.mp4",
+    "bytes": 6688816,
+    "sourceSha256": "6818ad14a14372083aa0c85c218aa8d4cec5f14ba5a06a3c3228c982c3b4f56d",
+    "processing": "H.264, CRF 25, 1280px wide, original timing, no audio, faststart"
+  },
+  {
+    "asset": "static/videos/optimization-ts-mesh.mp4",
+    "source": "C:\\Users\\robot-lamm\\OneDrive - purdue.edu\\LAB\\project\\RadiField\\video\\vanilla.mp4",
+    "bytes": 19895962,
+    "sourceSha256": "3c645324aa8113ddb76288638d439a1a273a7b901d7695dcb83b5dabaa00fcf2",
+    "processing": "H.264, CRF 25, 1280px wide, original timing, no audio, faststart"
+  },
+  {
+    "asset": "static/videos/optimization-ts-rgb.mp4",
+    "source": "C:\\Users\\robot-lamm\\OneDrive - purdue.edu\\LAB\\project\\RadiField\\video\\vanilla_img.mp4",
+    "bytes": 14066811,
+    "sourceSha256": "9340f8543df809af88f8332170dfdbe1c93e1f2b5e8a5e07d682ab53b5d8a5cf",
+    "processing": "H.264, CRF 25, 1280px wide, original timing, no audio, faststart"
+  },
+  {
+    "asset": "static/videos/walking-ours.mp4",
+    "source": "C:\\Users\\robot-lamm\\OneDrive - purdue.edu\\LAB\\project\\RadiField\\video\\application\\ours_1.mp4",
+    "bytes": 625509,
+    "sourceSha256": "a3924aef470d49649fe4df7db47a2a2cea764f81af74ad92e3b3d925659915e4",
+    "processing": "H.264, CRF 25, 1280px wide, original timing, no audio, faststart"
+  },
+  {
+    "asset": "static/videos/walking-ts.mp4",
+    "source": "C:\\Users\\robot-lamm\\OneDrive - purdue.edu\\LAB\\project\\RadiField\\video\\application\\vanilla.mp4",
+    "bytes": 937076,
+    "sourceSha256": "74a16eea76998477442e485102406601291f9db491a1475962d41c14946e639d",
+    "processing": "H.264, CRF 25, 1280px wide, original timing, no audio, faststart"
+  },
+  {
+    "asset": "static/videos/walking-gt.mp4",
+    "source": "C:\\Users\\robot-lamm\\OneDrive - purdue.edu\\LAB\\project\\RadiField\\video\\application\\GT.mp4",
+    "bytes": 710687,
+    "sourceSha256": "4f719c3da7275d06c4291e8989e4c8bab5485492812cd6494474054a7949abc2",
+    "processing": "H.264, CRF 25, 1280px wide, original timing, no audio, faststart"
+  }
+]

@@ -32,7 +32,7 @@ pnpm test
 
 The page contains the paper overview and final PDF, introductory comparison, pipeline figure, four synchronized optimization recordings, interactive comparisons, and three quadruped walking recordings.
 
-The 3D comparison covers Replica room0, UTMM fast-straight, and NCD quad-easy, with Ours against TS, MILo, 2DGS, Mesh-splat, or SuGaR. It uses one coordinate system and camera per scene. Models load only after activation; videos load only after play or seek. Preview images remain available when WebGL or model loading fails.
+The 3D comparison covers Replica room0, UTMM fast-straight, and NCD quad-easy, with Ours against TS, MILo, 2DGS, Mesh-splat, or SuGaR. Replica room0 versus TS is the default comparison. Meshes display in color only, using one coordinate system and camera per scene. Models load only after activation; videos load only after play or seek. Preview images remain available when WebGL or model loading fails.
 
 **SuGaR data limitation:** the three supplied `sugar.ply` files contain Gaussian parameters and points, with no triangle faces. They are explicitly labeled point clouds in the interface. The package therefore contains **15 surface meshes and 3 point clouds**, not 18 extracted meshes. SuGaR previews show all supplied Gaussian centers with color derived from the DC spherical-harmonic coefficients; they do not render full Gaussian splats. Replace these assets with extracted SuGaR meshes if available before making surface-level comparisons.
 
@@ -95,7 +95,7 @@ Videos are encoded as H.264 at CRF 25, 1280 pixels wide, with original timing, b
 
 ## Validation and package size
 
-Browser tests cover all 18 assets, every scene and baseline, both display modes, linked camera movement, reset/fullscreen, rapid selection changes, loading failures, WebGL fallback, shared video controls, seeking and unequal durations, mobile layout, reduced motion, and initial lazy loading. Tests run under the actual `/lidar-ts-page/` prefix. Original-versus-display visual comparisons use matching cameras and are saved to `.cache/validation/`; screenshots from the browser are also saved to `.cache/`.
+Browser tests cover all 18 assets, every scene and baseline, color rendering, linked camera movement, reset/fullscreen, rapid selection changes, loading failures, WebGL fallback, shared video controls, seeking and unequal durations, mobile layout, reduced motion, and initial lazy loading. Tests run under the actual `/lidar-ts-page/` prefix. Original-versus-display visual comparisons use matching cameras and are saved to `.cache/validation/`; screenshots from the browser are also saved to `.cache/`.
 
 The current `static/` package is approximately **385 MB**, including approximately **306 MB** of 3D assets. The largest GLB is approximately **57 MB**. Several models exceed the approximate 15 MB target to preserve important surface defects and boundaries. All files remain below 100 MiB, and the package remains below GitHub Pages' 1 GB site limit. `pnpm check` verifies sizes, file headers, and preview availability. Exclude `node_modules/`, `.cache/`, and test reports from publication; they are ignored by Git.
 

@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';import path from 'node:path';import {spawnSync
 const dirs=['utmm-fast','replica-room0','ncd-quad'];
 const names={ours:'Ours',ts:'Triangle Splatting',milo:'MILo','2dgs':'2DGS','mesh-splat':'Mesh-splat',sugar:'SuGaR'};
 const labels={'utmm-fast':'UTMM · fast-straight','replica-room0':'Replica · room0','ncd-quad':'NCD · quad-easy'};
-const manifest={version:1,defaultScene:'utmm-fast',defaultBaseline:'ts',scenes:{}};const provenance=[];
+const manifest={version:1,defaultScene:'replica-room0',defaultBaseline:'ts',scenes:{}};const provenance=[];
 for(const id of dirs){
  const folder=path.resolve('.cache/meshes',id);await fs.mkdir(`static/models/${id}`,{recursive:true});await fs.mkdir(`static/images/meshes/${id}`,{recursive:true});
  const ours=JSON.parse(await fs.readFile(path.join(folder,'ours.json'),'utf8'));

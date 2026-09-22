@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "defaultScene": "utmm-fast",
+  "defaultScene": "replica-room0",
   "defaultBaseline": "ts",
   "scenes": {
     "utmm-fast": {

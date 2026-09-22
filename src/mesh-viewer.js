@@ -5,11 +5,11 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 
 function dispose(object) {
-  object?.traverse(o => { o.geometry?.dispose(); const materials = Array.isArray(o.material) ? o.material : [o.material];new Set([...materials,o.userData.colorMaterial,o.userData.geometryMaterial].filter(Boolean)).forEach(m => m.dispose()); });
+  object?.traverse(o => { o.geometry?.dispose(); const materials = Array.isArray(o.material) ? o.material : [o.material];new Set(materials.filter(Boolean)).forEach(m => m.dispose()); });
 }
 export class MeshComparison {
   constructor(root, options = {}) {
-    this.root = root; this.mode = 'color'; this.panes = []; this.version = 0; this.syncing = false;
+    this.root = root; this.panes = []; this.version = 0; this.syncing = false;
     this.draco = new DRACOLoader(); this.draco.setDecoderPath(new URL('../vendor/draco/',import.meta.url).href); this.draco.setWorkerLimit(1);
     this.loader = new GLTFLoader(); this.loader.setDRACOLoader(this.draco);this.loader.setMeshoptDecoder(MeshoptDecoder);
     try { for (const element of root.querySelectorAll('.mesh-pane')) {
@@ -17,11 +17,9 @@ export class MeshComparison {
       const renderer = new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,preserveDrawingBuffer:true,powerPreference:'high-performance'});
       renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setClearColor('#f0f1ed');renderer.outputColorSpace = THREE.SRGBColorSpace;
       const scene = new THREE.Scene(); const camera = new THREE.PerspectiveCamera(42,1,.01,10000);camera.up.set(0,0,1);
-      scene.add(new THREE.HemisphereLight(0xffffff,0x8c948a,1.2));
-      const light = new THREE.DirectionalLight(0xffffff,1.8);light.position.set(3,-4,8);scene.add(light);
       const controls = new OrbitControls(camera,canvas);controls.enableDamping=false;controls.screenSpacePanning=true;controls.zoomToCursor=false;
       controls.addEventListener('change', () => this.synchronize(this.panes.find(p => p.canvas === canvas)));
-      const pane = {element,canvas,renderer,scene,camera,controls,light,model:null,url:null};this.panes.push(pane);
+      const pane = {element,canvas,renderer,scene,camera,controls,model:null,url:null};this.panes.push(pane);
       canvas.addEventListener('webglcontextlost', e => { e.preventDefault();options.onLost?.(); });
       canvas.addEventListener('keydown', e => this.keyboard(pane,e));
     } } catch(e) { this.panes.forEach(p => {p.controls.dispose();p.renderer.dispose();});throw e; }
@@ -55,8 +53,7 @@ export class MeshComparison {
       gltf.scene.traverse(o=>{if(o.isMesh||o.isPoints){const old=o.material;const mats=Array.isArray(old)?old:[old];mats.forEach(m=>m.dispose());
         const colors=o.geometry.attributes.color;if(colors){const linear=new Float32Array(colors.count*3);const color=new THREE.Color();for(let n=0;n<colors.count;n++){color.setRGB(colors.getX(n),colors.getY(n),colors.getZ(n)).convertSRGBToLinear();linear[n*3]=color.r;linear[n*3+1]=color.g;linear[n*3+2]=color.b;}o.geometry.setAttribute('color',new THREE.BufferAttribute(linear,3));}
         const pointSize=this.config.camera.maxDistance*.00012;
-        o.userData.colorMaterial=o.isPoints?new THREE.PointsMaterial({size:pointSize,vertexColors:true,sizeAttenuation:true}):new THREE.MeshBasicMaterial({vertexColors:!!o.geometry.attributes.color,side:THREE.DoubleSide,color:o.geometry.attributes.color?0xffffff:0xb4bab0});
-        o.userData.geometryMaterial=o.isPoints?new THREE.PointsMaterial({size:pointSize,color:0x8f9988,sizeAttenuation:true}):new THREE.MeshStandardMaterial({color:0x8f9988,roughness:.87,metalness:0,flatShading:true,side:THREE.DoubleSide});o.material=this.mode==='color'?o.userData.colorMaterial:o.userData.geometryMaterial;
+        o.material=o.isPoints?new THREE.PointsMaterial({size:pointSize,vertexColors:true,sizeAttenuation:true}):new THREE.MeshBasicMaterial({vertexColors:!!o.geometry.attributes.color,side:THREE.DoubleSide,color:o.geometry.attributes.color?0xffffff:0xb4bab0});
       }});
       p.model=gltf.scene;p.url=url;p.scene.add(p.model);
     }
@@ -68,10 +65,9 @@ export class MeshComparison {
     if(!this.config)return;this.syncing=true;
     this.panes.forEach(p=>{p.camera.position.fromArray(this.config.camera.position);p.controls.target.fromArray(this.config.camera.target);p.camera.up.fromArray(this.config.camera.up||[0,0,1]);p.camera.near=this.config.camera.near||.01;p.camera.far=this.config.camera.far||10000;p.controls.minDistance=this.config.camera.minDistance||.1;p.controls.maxDistance=this.config.camera.maxDistance||1000;p.camera.lookAt(p.controls.target);p.controls.update();});this.syncing=false;this.render();
   }
-  setMode(mode) {this.mode=mode;this.panes.forEach(p=>p.model?.traverse(o=>{if(o.isMesh||o.isPoints)o.material=mode==='color'?o.userData.colorMaterial:o.userData.geometryMaterial;}));this.render();}
   render() {
     this.panes.forEach(p=>{const {width,height}=p.canvas.parentElement.getBoundingClientRect();if(width<1||height<1)return;
-      p.renderer.setSize(width,height,false);p.camera.aspect=width/height;p.camera.updateProjectionMatrix();p.light.position.copy(p.camera.position);p.renderer.render(p.scene,p.camera);
+      p.renderer.setSize(width,height,false);p.camera.aspect=width/height;p.camera.updateProjectionMatrix();p.renderer.render(p.scene,p.camera);
     });
   }
   destroy(){this.abort?.abort();this.resizeObserver.disconnect();this.panes.forEach(p=>{dispose(p.model);p.controls.dispose();p.renderer.dispose();});this.draco.dispose();}

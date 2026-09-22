@@ -18,17 +18,19 @@ test('paper content, relative assets, and lazy media loading',async({page,reques
  const html=await page.content();expect(html).not.toMatch(/FIRST_AUTHOR|PAPER_TITLE|ARXIV PAPER ID|banner_video|carousel1|sample\.pdf/);
 });
 
-test('all scenes, all five baselines, both display modes, shared cameras',async({page})=>{
+test('all scenes, all five baselines, color rendering, shared cameras',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('./');await page.locator('#activate-viewer').click();await ready(page);
- const manifest=await (await page.request.get('static/data/results.json')).json();let assets=0;
+ await expect(page.locator('#scene-select')).toHaveValue('replica-room0');
+ await expect(page.locator('[name="display-mode"]')).toHaveCount(0);
+ const initial=await page.evaluate(()=>document.querySelector('#mesh-comparison').viewer.panes.map(p=>p.url));expect(initial.every(url=>url.includes('/replica-room0/'))).toBe(true);
+ const manifest=await (await page.request.get('static/data/results.json')).json();expect(manifest.defaultScene).toBe('replica-room0');let assets=0;
  for(const [scene,record] of Object.entries(manifest.scenes)){
   await page.selectOption('#scene-select',scene);await ready(page);assets++;
   for(const method of ['ts','milo','2dgs','mesh-splat','sugar']){
    await page.selectOption('#method-select',method);await ready(page);assets++;
    const state=await page.evaluate(()=>{const v=document.querySelector('#mesh-comparison').viewer;return v.panes.map(p=>({url:p.url,vertices:p.model.children.reduce((n,o)=>{o.traverse(x=>{if(x.geometry)n+=x.geometry.attributes.position.count});return n;},0),camera:p.camera.position.toArray(),target:p.controls.target.toArray()}))});
    expect(state[0].vertices).toBeGreaterThan(0);expect(state[1].vertices).toBeGreaterThan(0);expect(state[0].camera).toEqual(state[1].camera);expect(state[0].target).toEqual(state[1].target);expect(state[1].url).toContain(record.methods[method].model);
-   await page.check('[name="display-mode"][value="geometry"]');expect(await page.evaluate(()=>document.querySelector('#mesh-comparison').viewer.mode)).toBe('geometry');
-   await page.check('[name="display-mode"][value="color"]');
+   const colorOnly=await page.evaluate(()=>document.querySelector('#mesh-comparison').viewer.panes.every(p=>{let valid=true;p.model.traverse(o=>{if(o.isMesh||o.isPoints)valid&&=o.material.vertexColors===true&&(o.material.isMeshBasicMaterial||o.material.isPointsMaterial)});return valid}));expect(colorOnly).toBe(true);
    if(method==='sugar')await expect(page.locator('#viewer-status')).toContainText('not an extracted surface mesh');
   }
  }
@@ -55,15 +57,15 @@ test('rapid scene changes cannot display stale models or cameras',async({page})=
 });
 
 test('unavailable model preserves previews and retries',async({page})=>{
- await page.route('**/models/utmm-fast/ts.glb',r=>r.fulfill({status:503,body:'Unavailable'}));await page.goto('./');await page.locator('#activate-viewer').click();await expect(page.locator('#mesh-comparison')).toHaveAttribute('data-state','error');
+ await page.route('**/models/replica-room0/ts.glb',r=>r.fulfill({status:503,body:'Unavailable'}));await page.goto('./');await page.locator('#activate-viewer').click();await expect(page.locator('#mesh-comparison')).toHaveAttribute('data-state','error');
  await expect(page.locator('[data-side="ours"] img')).toBeVisible();await expect(page.locator('[data-side="baseline"] img')).toBeVisible();
- await page.unroute('**/models/utmm-fast/ts.glb');await page.locator('#activate-viewer').click();await ready(page);
+ await page.unroute('**/models/replica-room0/ts.glb');await page.locator('#activate-viewer').click();await ready(page);
 });
 
 test('WebGL failure keeps a useful static comparison',async({page})=>{
  await page.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){if(type.startsWith('webgl'))return null;return original.call(this,type,...args);};});
  await page.goto('./');await page.locator('#activate-viewer').click();await expect(page.locator('#viewer-status')).toContainText('unavailable in this browser');await expect(page.locator('[data-side="ours"] img')).toBeVisible();
- await page.selectOption('#scene-select','replica-room0');await expect(page.locator('[data-side="ours"] img')).toHaveAttribute('src',/replica-room0/);
+ await page.selectOption('#scene-select','utmm-fast');await expect(page.locator('[data-side="ours"] img')).toHaveAttribute('src',/utmm-fast/);
 });
 
 test('optimization play, pause, speed, seeking and shorter-clip hold',async({page})=>{
@@ -79,12 +81,14 @@ test('optimization play, pause, speed, seeking and shorter-clip hold',async({pag
 
 test('walking clips retain durations and hold the completed clips',async({page})=>{
  await page.goto('./');const group=page.locator('[data-video-group="walking"]');await group.locator('[data-play]').click();await expect(group.locator('[data-play]')).toHaveText('Pause',{timeout:45000});
- await group.evaluate(r=>{const seek=r.querySelector('[data-seek]');seek.value=35;seek.dispatchEvent(new Event('input'));});
- await expect.poll(()=>group.evaluate(r=>r.querySelectorAll('video')[0].currentTime)).toBeGreaterThan(28);
- const videos=await group.evaluate(r=>[...r.querySelectorAll('video')].map(v=>({time:v.currentTime,duration:v.duration,paused:v.paused})));
- expect(videos[0].time).toBeLessThan(28.9);expect(videos[1].time).toBeCloseTo(35,1);expect(videos[2].time).toBeLessThan(33.6);expect(videos.every(v=>v.paused)).toBe(true);
- await group.locator('[data-play]').click();await expect.poll(()=>group.evaluate(r=>r.querySelectorAll('video')[1].currentTime)).toBeGreaterThan(35.2);
- expect(await group.evaluate(r=>[...r.querySelectorAll('video')].filter((v,i)=>i!==1).every(v=>v.paused&&v.currentTime>v.duration-.1))).toBe(true);
+ const durations=await group.evaluate(r=>[...r.querySelectorAll('video')].map(v=>v.duration));
+ const position=(Math.min(...durations)+Math.max(...durations))/2;
+ await group.evaluate((r,time)=>{const seek=r.querySelector('[data-seek]');seek.value=time;seek.dispatchEvent(new Event('input'));},position);
+ const seekPosition=await group.locator('[data-seek]').inputValue().then(Number);
+ await expect.poll(()=>group.evaluate((r,time)=>Math.max(...[...r.querySelectorAll('video')].map(v=>Math.abs(v.currentTime-Math.min(time,v.duration-.045)))),seekPosition)).toBeLessThan(.01);
+ expect(await group.evaluate(r=>[...r.querySelectorAll('video')].every(v=>v.paused))).toBe(true);
+ await group.locator('[data-play]').click();await expect.poll(()=>group.evaluate(r=>r.comparison.master.currentTime)).toBeGreaterThan(seekPosition+.2);
+ expect(await group.evaluate((r,time)=>[...r.querySelectorAll('video')].filter(v=>v.duration<time).every(v=>v.paused&&v.currentTime>v.duration-.1),seekPosition)).toBe(true);
  await group.locator('[data-restart]').click();await expect.poll(()=>group.evaluate(r=>[...r.querySelectorAll('video')].every(v=>v.currentTime<.1&&v.paused))).toBe(true);
 });
 

@@ -13,9 +13,6 @@ for(const [id,scene] of Object.entries(manifest.scenes)){
    await fs.writeFile(`static/images/meshes/${id}/${key}.jpg`,Buffer.from(image,'base64'));
   }
   await page.locator('#mesh-comparison').screenshot({path:`.cache/${id}-${method}-color.png`});
-  await page.check('[name="display-mode"][value="geometry"]');
-  await page.locator('#mesh-comparison').screenshot({path:`.cache/${id}-${method}-geometry.png`});
-  await page.check('[name="display-mode"][value="color"]');
   console.log('Captured',id,method);
  }
 }

@@ -122,7 +122,7 @@ activate.addEventListener('click', async () => {
       manifest=data;
       viewer = new module.MeshComparison(root, {onLost: () => { revision++; previews();root.dataset.state='error';status.textContent='3D rendering stopped. Preview images are available; reload the page to restart 3D.';activate.hidden=true; }});
       root.viewer = viewer;
-      viewer.setMode(document.querySelector('[name="display-mode"]:checked').value);
+
     }
     await selectPair();
   } catch {
@@ -130,9 +130,6 @@ activate.addEventListener('click', async () => {
   } finally { initializing = false; activate.disabled = false; }
 });
 document.querySelector('#reset-view').addEventListener('click', () => viewer?.reset());
-document.querySelectorAll('[name="display-mode"]').forEach(input => input.addEventListener('change', () => {
-  if(viewer) viewer.setMode(input.value); else status.textContent = 'Load 3D to switch between color and shaded geometry.';
-}));
 document.querySelector('#fullscreen-view').addEventListener('click', async () => {
   try { if (document.fullscreenElement) await document.exitFullscreen(); else await root.requestFullscreen(); }
   catch { status.textContent = 'Fullscreen is not supported by this browser.'; }
